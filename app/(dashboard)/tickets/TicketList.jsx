@@ -1,18 +1,17 @@
-import Link from "next/link";
+import Link from "next/link"
 
 async function getTickets() {
-  const res = await fetch("http://localhost:4000/tickets", {
+  const res = await fetch('http://localhost:4000/tickets', {
     next: {
-      // revalidate data after X seconds
-      revalidate: 0, // use 0 to opt out of using cache
-    },
-  });
+      revalidate: 0 // use 0 to opt out of using cache
+    }
+  })
 
-  return res.json();
+  return res.json()
 }
 
 export default async function TicketList() {
-  const tickets = await getTickets();
+  const tickets = await getTickets()
 
   return (
     <>
@@ -28,8 +27,8 @@ export default async function TicketList() {
         </div>
       ))}
       {tickets.length === 0 && (
-        <p className="text-center">There are no open tickets</p>
+        <p className="text-center">There are no open tickets, yay!</p>
       )}
     </>
-  );
+  )
 }
