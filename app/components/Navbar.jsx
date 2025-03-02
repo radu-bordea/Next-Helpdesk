@@ -7,7 +7,7 @@ export default function Navbar() {
     <nav>
       <Image
         src={Logo}
-        alt='Dojo Helpdesk logo'
+        alt='Radu Helpdesk logo'
         width={70}
         placeholder='blur'
         quality={100}
