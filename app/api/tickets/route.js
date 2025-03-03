@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export const dynamic = "force-dynamic";
 
 export async function GET() {
-  const response = await fetch("http://localhost:3000/tickets");
+  const res = await fetch("http://localhost:3000/tickets");
 
   const tickets = await res.json();
 
